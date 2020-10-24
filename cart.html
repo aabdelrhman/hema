@@ -173,7 +173,7 @@
 							</div>
 							<div class="one-eight text-center">
 								<div class="display-tc">
-									<span class="price">120.00 pound</span>
+									<span  id="res1" class="price">00.00 pound</span>
 								</div>
 							</div>
 							<div class="one-eight text-center">
@@ -198,13 +198,13 @@
 							<div class="one-eight text-center">
 								<div class="display-tc">
 									<form action="#">
-										<input type="text" name="quantity" class="form-control input-number text-center" value="1" min="1" max="100">
+										<input type="text" id="quantity1" name="quantity" class="form-control input-number text-center" value="1" min="1" max="100">
 									</form>
 								</div>
 							</div>
 							<div class="one-eight text-center">
 								<div class="display-tc">
-									<span class="price">120.00 pound</span>
+									<span id="res2" class="price">00.00 pound</span>
 								</div>
 							</div>
 							<div class="one-eight text-center">
@@ -228,12 +228,12 @@
 							</div>
 							<div class="one-eight text-center">
 								<div class="display-tc">
-									<input type="text" id="quantity" name="quantity" class="form-control input-number text-center" value="1" min="1" max="100">
+									<input type="text" id="quantity2" name="quantity" class="form-control input-number text-center" value="1" min="1" max="100">
 								</div>
 							</div>
 							<div class="one-eight text-center">
 								<div class="display-tc">
-									<span class="price">120.00 pound</span>
+									<span id="res3" class="price">00.00 pound</span>
 								</div>
 							</div>
 							<div class="one-eight text-center">
@@ -263,7 +263,7 @@
 								<div class="col-sm-4 text-center">
 									<div class="total">
 										<div class="sub">
-											<p><span>Subtotal:</span> <span>200.00 pound</span></p>
+											<p><span>Subtotal:</span> <span class="subtotal">200.00 pound</span></p>
 											<p><span>Delivery:</span> <span>0.00 pound</span></p>
 											<p><span>Discount:</span> <span>45.00 pound</span></p>
 										</div>
@@ -456,6 +456,20 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                   $(".link1").attr("href","css/style1.css");
                      $('.div1').hide(1000);
                 });
+                  $("#quantity").keyup(function(){
+                   $("#res1").html(68.00 * $("#quantity").val()+"");
+                      $(".subtotal").html($("#res1").val()+$("#res2".val())+$("#res3").val());
+                  });
+                  $("#quantity1").keyup(function(){
+                   $("#res2").html(68.00 * $("#quantity1").val()+"");
+                      $(".subtotal").html($("#res1").val()+$("#res2".val())+$("#res3").val());
+                  });
+                    $("#quantity2").keyup(function(){
+                   $("#res3").html(68.00 * $("#quantity2").val()+"");
+                        $(".subtotal").html($("#res1").val()+$("#res2".val())+$("#res3").val());
+                  });
+                
+                
             });
         </script>
 
